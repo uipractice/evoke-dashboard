@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,18 @@
       </form>
     </div>
   </div>
-</nav>
+</nav> -->
+
+<div class="min-h-screen bg-gray-50">
+  <!-- Navbar and Header Sections Here (As Defined Earlier) -->
+
+  <!-- Dynamic Grid Section -->
+  <section class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+    <app-dashboard *ngFor="let Dashboard of Dashboards" [boxData]="Dashboard"></app-dashboard>
+  </section>
+
+  <!-- Footer Section Here -->
+</div>
 
 <div class="container">
   <router-outlet></router-outlet>
