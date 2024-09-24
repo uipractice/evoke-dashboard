@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLinkActive, RouterLink, RouterOutlet, DashboardComponent],
+  imports: [RouterLinkActive, RouterLink, RouterOutlet, DashboardComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -13,6 +14,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 export class AppComponent {
   pageTitle = 'Dashboard';
   title = 'evoke-dashboard';
+Dashboards: any;
 }
 
  const Dashboards = [
