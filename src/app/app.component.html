@@ -35,12 +35,16 @@
   </div>
 </nav> -->
 
+
 <div class="min-h-screen bg-gray-50">
   <!-- Navbar and Header Sections Here (As Defined Earlier) -->
 
   <!-- Dynamic Grid Section -->
   <section class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-    <app-dashboard *ngFor="let Dashboard of Dashboards" [boxData]="Dashboard"></app-dashboard>
+    <!-- <app-dashboard *ngFor="let Dashboard of Dashboards" [boxData]="Dashboard"></app-dashboard> -->
+    @for (Dashboard of Dashboards; track Dashboard.cardTitle) {
+      <app-dashboard [boxData]="Dashboard"></app-dashboard>
+    }
   </section>
 
   <!-- Footer Section Here -->

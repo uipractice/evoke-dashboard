@@ -9,3 +9,10 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', loadComponent: () => import('./utilities/page-not-found.component').then(m => m.PageNotFoundComponent) }
 ];
+
+/* Latest Routing via Lazy Loading */
+// export const routes: Routes = [
+//   { path: 'home', loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent) },
+//   { path: '', redirectTo: 'home', pathMatch: 'full' },
+//   { path: '**', loadComponent: () => import('./utilities/page-not-found.component').then(m => m.PageNotFoundComponent) }
+// ]
