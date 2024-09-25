@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
+
 export class DashboardComponent {
-  @Input()
-  boxData!: { title: string; description: string; imageUrl: string; };
+  @Input() boxData!: { cardTitle: string; description: string; imageUrl: string; };
 }
