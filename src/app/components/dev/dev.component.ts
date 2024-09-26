@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../utilities/shared-service';
+import { SharedService } from '../../shared/shared-service';
 
 @Component({
   selector: 'app-dev',
