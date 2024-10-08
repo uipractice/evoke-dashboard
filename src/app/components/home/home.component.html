@@ -2,7 +2,7 @@
   <div class="grid gap-4 m-2">
     @for (Card of Dashboards1; track Card) {
       @if(Card.Template1?.groupId == 0) {
-          <div class=" grid col-span-{{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">
+          <div class=" grid {{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">
             <!-- Overlay -->
             <div class="absolute inset-0 h-[200px]  bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
               <!-- Header -->
@@ -13,7 +13,7 @@
           </div>
       }
       @if(Card.Template1?.groupId == 1) {
-        <div class="grid col-span-{{Card.Template1.cols}} row-span-{{Card.Template1.rows}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '290px'}">
+        <div class="grid {{Card.Template1.cols}} {{Card.Template1.rows}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '290px'}">
           <!-- Overlay -->
           <div class="absolute inset-0 h-[290px]  bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
             <!-- Header -->
@@ -25,7 +25,7 @@
       }
 
       @if(Card.Template2_child) {
-        <div class="col-span-{{ Card.cols }} grid grid-rows-{{ Card.Template2_child.length }}">
+        <div class="{{ Card.cols }} grid {{ Card.childlength }}">
           @for (child of  Card.Template2_child; track child) {
             <div class="h-[132px] flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg m-2">
               <!-- Left side (Image) -->
@@ -43,7 +43,7 @@
       }
 
       @if(Card.Template2?.groupId == 2) {
-        <div class="col-span-{{Card.Template2.cols}} flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg">
+        <div class="{{Card.Template2.cols}}  flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg">
           <!-- Left side (Image) -->
           <div class="md:w-1/3 w-full">
             <img src="{{Card.Template2?.imageUrl}}" alt="Image Description" class="w-full h-auto object-cover rounded-lg">
@@ -57,7 +57,7 @@
       }
 
       @if(Card.Template1?.groupId == 3) {
-        <div class="col-span-{{Card.Template1.cols}}  relative bg-cover bg-center flex flex-col justify-end items-start shadow-lg rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '270px'}">
+        <div class="{{Card.Template1.cols}}  relative bg-cover bg-center flex flex-col justify-end items-start shadow-lg rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '270px'}">
           <!-- Overlay -->
           <div class="absolute inset-0 h-[270px]  bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white shadow-lg rounded-lg">
             <!-- Header -->
@@ -69,7 +69,7 @@
       }
 
       @if(Card.Template2?.groupId == 4) {
-        <div class=" col-span-{{Card.Template2.cols}}  flex flex-col md:flex-row items-center bg-white p-6 shadow-lg rounded-lg">
+        <div class=" {{Card.Template2.cols}}  flex flex-col md:flex-row items-center bg-white p-6 shadow-lg rounded-lg">
           <!-- Left side (Image) -->
           <div class="md:w-1/3 w-full">
             <img src="{{Card.Template2?.imageUrl}}" alt="Image Description" class="w-full h-auto object-cover rounded-lg">

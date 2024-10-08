@@ -15,6 +15,16 @@ module.exports = {
       // }
     },
   },
+  purge:{
+    options: {
+      safelist: [
+        // Safelist your dynamic class patterns here
+        /^col-span-/,
+        /^row-span-/,
+      ],
+    },
+  },
+
   plugins: [],
 }
 

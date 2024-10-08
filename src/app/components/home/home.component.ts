@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 0,
           groupId: 0,
-          cols: 12,
+          cols: "col-span-12",
           cardTitle: 'UI/UX',
           description:
             'Empowering users with intuitive designs that enhance operational efficiency.',
@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 1,
           groupId: 1,
-          cols: 4,
-          rows: 2,
+          cols: "col-span-4",
+          rows: "row-span-2",
           cardTitle: 'Evolve',
           description: 'The foundation for seamless experiences',
           imageUrl: 'assets/images/Evolve.jpg',
@@ -63,16 +63,17 @@ export class HomeComponent implements OnInit {
             imageUrl: 'assets/images/EvokeLogo.png',
           },
         ],
-        cols: 4,
-        rows: 1, // Half height stacked
+        cols: "col-span-4",
+        rows: "row-span-1", // Half height stacked
+        childlength: "grid-rows-2"
       },
       {
         // Template1: This is an template with 4 cols, background-img & content over bg-img....
         Template1: {
           id: 4,
           groupId: 1,
-          cols: 4,
-          rows: 2,
+          cols: "col-span-4",
+          rows: "row-span-2",
           cardTitle: '2024',
           description: 'UX Trends',
           imageUrl: 'assets/images/EvokeBrBook.png',
@@ -83,7 +84,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 5,
           groupId: 2,
-          cols: 6,
+          cols: "col-span-6",
           cardTitle: 'UX Standard Documents',
           description:
             "UX documentation is a repository of all information relevant to the user experience design process. Team members can always refer to this repository to see what has worked and what hasn't. This way, teams can build on past experiences and avoid making the same mistakes",
@@ -95,7 +96,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 6,
           groupId: 2,
-          cols: 6,
+          cols: "col-span-6",
           cardTitle: 'Review Documents',
           description:
             'A critical step in ensuring the accuracy, clarity, and quality of a project or deliverable. It involves thoroughly examining the content to identify any errors, inconsistencies, or areas that need improvement, such as factual inaccuracies, unclear language, or missing information.',
@@ -107,7 +108,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 7,
           groupId: 3,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'Blog',
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
@@ -119,7 +120,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 8,
           groupId: 3,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'Case Study',
           description:
             'Provides  the understanding of complex issues and informing decision-making by examining specific examples in depth.',
@@ -131,7 +132,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 9,
           groupId: 3,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'Whitepaper',
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
@@ -143,7 +144,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 10,
           groupId: 4,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'UX Tools',
           description:
             "A web-based tool for designing, prototyping, and collaborating in real-time. It's widely used for interface design and has robust prototyping capabilities.",
@@ -155,7 +156,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 11,
           groupId: 4,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'UX Best Practices',
           description:
             'Focus on creating intuitive, seamless, and enjoyable experiences for users.',
@@ -167,7 +168,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 12,
           groupId: 4,
-          cols: 4,
+          cols: "col-span-4",
           cardTitle: 'Quicklinks',
           description:
             'Provide easy access to frequently used or important sections, streamlining navigation for users.',
