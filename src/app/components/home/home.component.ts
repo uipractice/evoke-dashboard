@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 export class HomeComponent implements OnInit {
   pageTitle: string = 'Welcome To Home Page';
-  Dashboards1!: any[];
+  Dashboards1: any=[];
 
 
 
