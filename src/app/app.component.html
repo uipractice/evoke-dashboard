@@ -1,41 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/dev']" routerLinkActive="active">UI/UX</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/test']" routerLinkActive="active">QA</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav> -->
-
-
 <div class="min-h-screen bg-gray-50">
 
   <!-- Navbar and Header Sections Here (As Defined Earlier) -->
@@ -64,22 +26,13 @@
             </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <!-- <a [routerLink]="['/home']" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white  hover:bg-gray-700" aria-current="page">Dashboard</a> -->
-                <a [routerLink]="['/Dashboard']" routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange" aria-current="page">Dashboard</a>
-                <a [routerLink]="['/AI']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">AI</a>
-                <a [routerLink]="['/Cloud']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">CLOUD</a>
-                <a [routerLink]="['/IT']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">IT</a>
-                <!-- <a [routerLink]="['/Java']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">JAVA</a>
-                <a [routerLink]="['/LowCode']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">LOWCODE</a>
-                <a [routerLink]="['/.NET']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">.NET</a>
-                <a [routerLink]="['/OpenSource']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">OPENSOURCE</a>
-                <a [routerLink]="['/Oracle']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">ORACLE</a>
-                <a [routerLink]="['/Pega']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">PEGA</a>
-                <a [routerLink]="['/QA']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">QA</a>
-                <a [routerLink]="['/RPA']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">RPA</a>
-                <a [routerLink]="['/Salesforce']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">SALESFORCE</a> -->
-                <a [routerLink]="['/UI']"  routerLinkActive="bg-headerOrange" class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white">UI</a>
+                @for(link of navLinks; track link) {
+                  <a [routerLink]="[link.path]" routerLinkActive="bg-headerOrange" aria-current="page"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white"
+                  >
+                 {{ link.label }}
+               </a>
+                }
               </div>
             </div>
           </div>
@@ -132,14 +85,6 @@
   <div class="">
     <router-outlet></router-outlet>
   </div>
-
-  <!-- Dynamic Grid Section -->
-  <!-- <section class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"> -->
-    <!-- <app-dashboard *ngFor="let Dashboard of Dashboards" [boxData]="Dashboard"></app-dashboard> -->
-    <!-- @for (Dashboard of Dashboards; track Dashboard.cardTitle) {
-      <app-dashboard [boxData]="Dashboard"></app-dashboard>
-    } -->
-  <!-- </section> -->
 
   <!-- Footer Section Here -->
 </div>

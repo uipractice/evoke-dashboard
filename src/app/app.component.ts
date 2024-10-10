@@ -14,15 +14,15 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   pageTitle: string = 'Dashboard';
   title: string = 'evoke-dashboard';
-  Dashboards: Array<{ cardTitle: string; description: string; imageUrl: string }>  = [
-    // { cardTitle: 'Evolve', description: 'The foundation for seamless experiences', imageUrl: 'assets/evolve.png' },
-    // { cardTitle: 'Evoke Logo', description: 'Downloadable Logos in various formats', imageUrl: 'assets/evoke-logo.png' },
-    // { cardTitle: '2024 UX Trends', description: 'Stay ahead with the latest UX trends', imageUrl: 'assets/ux-trends.png' },
-    // Add more box items here
-    { cardTitle: 'Evolve', description: 'The foundation for seamless experiences', imageUrl: 'assets/images/EvokeLogo1.png' },
-    { cardTitle: 'Evoke Logo', description: 'Downloadable Logos in various formats', imageUrl: 'assets/images/EvokeLogo1.png' },
-    { cardTitle: '2024 UX Trends', description: 'Stay ahead with the latest UX trends', imageUrl: 'assets/images/EvokeLogo1.png' }
+
+  navLinks = [
+    { label: 'Dashboard', path: '/Dashboard' },
+    { label: 'AI', path: '/AI' },
+    { label: 'CLOUD', path: '/Cloud' },
+    { label: 'IT', path: '/IT' },
+    { label: 'UI', path: '/UI' }
   ];
+
 
 }
 
