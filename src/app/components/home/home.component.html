@@ -2,9 +2,9 @@
   <div class="grid gap-4 m-2">
     @for (Card of Dashboards1; track Card) {
       @if(Card.Template1?.groupId == 0) {
-          <div class=" grid {{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">
+          <div class=" grid {{Card.Template1.cols}} relative bg-no-repeat bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">
             <!-- Overlay -->
-            <div class="absolute inset-0 h-[200px]  bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
+            <div class="absolute inset-0 h-[200px] flex flex-col justify-center items-center text-center text-white">
               <!-- Header -->
               <h1 class="text-4xl font-bold mb-4">{{Card.Template1?.cardTitle}}</h1>
               <!-- Description -->
