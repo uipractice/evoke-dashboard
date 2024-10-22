@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SharedService } from './shared-service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
     template: `
@@ -22,11 +24,20 @@ export class EvokeStyleGuidePdfComponent implements OnInit{
 
   // Inject the PdfService
   public sharedService = inject(SharedService);
+  private route = inject(ActivatedRoute);
+
 
   ngOnInit(): void {
-    // Subscribe to the current PDF URL from the service
-    this.sharedService.currentPdfUrl$.subscribe(url => {
-      this.pdfSrc = url;  // Set the PDF URL in the component
+    // Check for PDF URL from query parameters
+    this.route.queryParams.subscribe(params => {
+      if (params['pdfUrl']) {
+        this.pdfSrc = decodeURIComponent(params['pdfUrl']); // Set the PDF URL from the query parameter
+      } else {
+        // Fallback to service if no URL in parameters
+        this.sharedService.currentPdfUrl$.subscribe(url => {
+          this.pdfSrc = url;  // Set the PDF URL in the component
+        });
+      }
     });
   }
 }

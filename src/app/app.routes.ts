@@ -12,7 +12,6 @@ import { Routes } from '@angular/router';
 
 /* Latest Routing via Lazy Loading */
 export const routes: Routes = [
-  { path: 'Dashboard', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'AI', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'Cloud', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'IT', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
@@ -26,6 +25,8 @@ export const routes: Routes = [
   { path: 'RPA', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'Salesforce', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
   { path: 'UI', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
-  { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
+  { path: 'UI/pdf', loadComponent: () => import('./shared/evoke-style-guide-pdf.component').then(m => m.EvokeStyleGuidePdfComponent) },
+  { path: 'UX', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
+  { path: '', redirectTo: 'UI', pathMatch: 'full' },
   { path: '**', loadComponent: () => import('./shared/page-not-found.component').then(m => m.PageNotFoundComponent) }
 ];
