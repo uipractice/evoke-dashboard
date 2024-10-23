@@ -9,14 +9,28 @@ import { SharedService } from './shared-service';
   template: `
     @if(card.groupId == 0) {
       <div class="absolute inset-0 rounded-lg bg-opacity-50 flex flex-col text-left text-white">
-        <h1 class="text-4xl font-bold mb-4">{{ card.cardTitle }}</h1>
-        <p class="text-lg max-w-lg">{{ card.description }}</p>
+        <h1 class="mt-10 ml-6 text-4xl font-bold mb-4">{{ card.cardTitle }}</h1>
+        <p class="ml-6 text-base font-normal max-w-lg">{{ card.description }}</p>
       </div>
+    } @else if((card.groupId == 1) && (card.id !== 4)) {
+    <button (click)="openPdfInNewTab(card.pdfLink)">
+      <div class="absolute inset-0 rounded-lg bg-opacity-50 flex flex-col text-left text-white">
+        <h1 class="ml-6 mt-56 text-xl font-bold">{{ card.cardTitle }}</h1>
+        <p class="ml-6 text-sm max-w-lg">{{ card.description }}</p>
+      </div>
+    </button>
+    } @else if((card.groupId == 1) && (card.id === 4)) {
+    <button (click)="openPdfInNewTab(card.pdfLink)">
+      <div class="absolute inset-0 rounded-lg bg-opacity-50 flex flex-col text-left text-white">
+        <h1 class="ml-6 mt-4 text-xl font-bold">{{ card.cardTitle }}</h1>
+        <p class="ml-6 mt-48 text-3xl font-semibold	 max-w-lg">{{ card.description }}</p>
+      </div>
+    </button>
     } @else {
     <button (click)="openPdfInNewTab(card.pdfLink)">
       <div class="absolute inset-0 rounded-lg bg-opacity-50 flex flex-col text-left text-white">
-        <h1 class="text-4xl font-bold mb-4">{{ card.cardTitle }}</h1>
-        <p class="text-lg max-w-lg">{{ card.description }}</p>
+        <h1 class="ml-8 mt-40 text-xl font-bold">{{ card.cardTitle }}</h1>
+        <p class="ml-8 mr-6 text-sm font-normal max-w-lg line-clamp-2">{{ card.description }}</p>
       </div>
     </button>
     }

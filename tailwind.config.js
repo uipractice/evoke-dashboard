@@ -9,10 +9,12 @@ module.exports = {
         headerBlue: '#1B154C',
         headerOrange: '#F16A22',
         headerWhite: '#FFF',
+        footerGray: '#454151',
       },
-      // gridTemplateColumns: {
-      //   '1.5': 'repeat(2, 1fr) 0.5fr', // Custom grid with 1.5 columns
-      // }
+      height: {
+        '166': '166px', // Define custom height for 2rd row
+        '132': '132px',
+      }
     },
   },
   purge:{
@@ -25,6 +27,8 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
 
