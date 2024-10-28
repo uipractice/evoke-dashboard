@@ -6,55 +6,67 @@ import { SharedService } from './shared-service';
 
 @Component({
   template: `
-    @if((card.groupId == 1) && (card.id === 2)) {
-      <button (click)="openPdfInNewTab(card.pdfLink)">
-        <div class="h-[132px] flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg">
-          <div class="md:w-1/3 w-full">
-            <img src="{{card.imageUrl}}" alt="Image Description" class="h-[132px] object-cover rounded-l-lg">
+    <div *ngIf="card">
+      <!-- Group ID 1, Card ID 2 -->
+      @if((card.groupId == 1) && (card.id === 2)) {
+        <button (click)="openPdfInNewTab(card.pdfLink)">
+          <div class="flex flex-col sm:flex-row items-center bg-white shadow-lg rounded-lg h-auto sm:h-[132px]">
+            <div class="w-full sm:w-1/3">
+              <img src="{{card.imageUrl}}" alt="Image Description" class="h-[132px] w-full object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg">
+            </div>
+            <div class="w-full sm:w-2/3 p-3 sm:p-5">
+              <h1 class="text-lg sm:text-xl font-medium text-gray-900 mb-2 text-left border-b border-solid pb-2">{{card.cardTitle}}</h1>
+              <p class="text-sm sm:text-base text-gray-700 line-clamp-2 text-left">{{card.description}}</p>
+            </div>
           </div>
-          <div class="md:w-2/3 w-full md:mt-0 mr-4 ml-4">
-            <h1 class="text-xl font-medium text-gray-900 mb-2">{{card.cardTitle}}</h1>
-            <p class="text-gray-700 mb-4 line-clamp-2">{{card.description}}</p>
+        </button>
+      }
+
+      <!-- Group ID 1, Card ID 3 -->
+      @else if((card.groupId == 1) && (card.id === 3)) {
+        <button (click)="openPdfInNewTab(card.pdfLink)">
+          <div class="flex flex-col sm:flex-row items-center mt-3 bg-white shadow-lg rounded-lg h-auto sm:h-[132px]">
+            <div class="w-full sm:w-1/3 h-[132px] flex justify-center border-b sm:border-b-0 sm:border-r-2 border-gray-300">
+              <img src="{{card.imageUrl}}" alt="Image Description" class="h-[75px] object-cover m-4 sm:m-6">
+            </div>
+            <div class="w-full sm:w-2/3 p-3 sm:pl-6 sm:p-5">
+              <h1 class="text-lg sm:text-xl font-medium text-gray-900 mb-2 text-left border-b border-solid pb-2">{{card.cardTitle}}</h1>
+              <p class="text-sm sm:text-base text-gray-700 line-clamp-2 text-left">{{card.description}}</p>
+            </div>
           </div>
-        </div>
-      </button>
-    } @else if((card.groupId == 1) && (card.id === 3)) {
-      <button (click)="openPdfInNewTab(card.pdfLink)">
-        <div class="h-[132px] flex flex-col md:flex-row items-center mt-3 bg-white shadow-lg rounded-lg">
-          <div class="md:w-1/3 w-full border-r-2 border-solid h-[132px] flex">
-            <img src="{{card.imageUrl}}" alt="Image Description" class="h-[75px] object-cover ml-6 mt-6">
+        </button>
+      }
+
+      <!-- Group ID 2 -->
+      @else if(card.groupId == 2) {
+        <button (click)="openPdfInNewTab(card.pdfLink)">
+          <div class="flex flex-col sm:flex-row items-center bg-white shadow-lg rounded-lg m-2 h-auto sm:h-[166px]">
+            <div class="w-full sm:w-1/3">
+              <img src="{{card.imageUrl}}" alt="Image Description" class="h-[166px] w-full object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg">
+            </div>
+            <div class="w-full sm:w-2/3 p-3 sm:pl-6 sm:p-5">
+              <h1 class="text-lg sm:text-xl font-medium text-gray-900 mb-2 text-left border-b border-solid pb-2">{{card.cardTitle}}</h1>
+              <p class="text-sm sm:text-base text-gray-700 line-clamp-2 text-left">{{card.description}}</p>
+            </div>
           </div>
-          <div class="md:w-2/3 w-full md:pl-6 mt-4 md:mt-0">
-            <h1 class="text-xl font-medium text-gray-900 mb-2">{{card.cardTitle}}</h1>
-            <p class="text-gray-700 mb-4 mr-6 line-clamp-2">{{card.description}}</p>
+        </button>
+      }
+
+      <!-- Default case -->
+      @else {
+        <button (click)="openPdfInNewTab(card.pdfLink)">
+          <div class="flex flex-col sm:flex-row items-center bg-white shadow-lg rounded-lg m-2 h-auto sm:h-[132px]">
+            <div class="w-full sm:w-1/3">
+              <img src="{{card.imageUrl}}" alt="Image Description" class="h-[132px] w-full object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg">
+            </div>
+            <div class="w-full sm:w-2/3 p-3 sm:py-5 sm:px-3">
+              <h1 class="text-lg sm:text-xl font-medium text-gray-900 mb-2 text-left border-b border-solid pb-2">{{card.cardTitle}}</h1>
+              <p class="text-sm sm:text-base text-gray-700 line-clamp-3 text-left">{{card.description}}</p>
+            </div>
           </div>
-        </div>
-      </button>
-    } @else if(card.groupId == 2){
-      <button (click)="openPdfInNewTab(card.pdfLink)">
-        <div class="h-[166px] flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg m-2">
-          <div class="md:w-1/3 w-full">
-            <img src="{{card.imageUrl}}" alt="Image Description" class="h-[166px] object-cover rounded-l-lg">
-          </div>
-          <div class="md:w-2/3 w-full md:pl-6 mt-4 md:mt-0">
-            <h1 class="text-xl font-medium text-gray-900 mb-2">{{card.cardTitle}}</h1>
-            <p class="text-gray-700 mb-4 mr-6 line-clamp-2">{{card.description}}</p>
-          </div>
-        </div>
-      </button>
-    } @else {
-      <button (click)="openPdfInNewTab(card.pdfLink)">
-        <div class="h-[132px] flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg m-2">
-          <div class="md:w-1/3 w-full">
-            <img src="{{card.imageUrl}}" alt="Image Description" class="h-[132px] object-cover rounded-l-lg">
-          </div>
-          <div class="md:w-2/3 w-full md:pl-6 mt-4 md:mt-0">
-            <h1 class="text-xl font-medium text-gray-900 mb-2">{{card.cardTitle}}</h1>
-            <p class="text-gray-700 mb-4 mr-6 line-clamp-3">{{card.description}}</p>
-          </div>
-        </div>
-      </button>
-    }
+        </button>
+      }
+    </div>
   `,
   selector: 'app-template2-card',
   standalone: true,
@@ -62,17 +74,14 @@ import { SharedService } from './shared-service';
 })
 
 export class Template2CardComponent implements OnInit {
-  @Input() card: any; // Pass the card object from parent
-  // @Input() height: number = 200; // Pass the height dynamically, default is 200
+  @Input() card: any;
   private sharedService = inject(SharedService);
 
   ngOnInit(): void {}
 
-  // Method to set the PDF URL and navigate to the PDF component in an new tab
   openPdfInNewTab(pdfUrl: string): void {
-    // Open the UI/pdf route with the PDF URL as a query parameter
     const pdfViewerUrl = `UI/pdf?pdfUrl=${encodeURIComponent(pdfUrl)}`;
-    window.open(pdfViewerUrl, '_blank'); // Open the URL in a new tab
+    window.open(pdfViewerUrl, '_blank');
   }
-
 }
+
