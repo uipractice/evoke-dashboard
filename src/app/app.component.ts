@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CommonModule } from '@angular/common';
@@ -15,15 +15,45 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   pageTitle: string = 'Dashboard';
   title: string = 'evoke-dashboard';
-  Dashboards: Array<{ cardTitle: string; description: string; imageUrl: string }>  = [
-    // { cardTitle: 'Evolve', description: 'The foundation for seamless experiences', imageUrl: 'assets/evolve.png' },
-    // { cardTitle: 'Evoke Logo', description: 'Downloadable Logos in various formats', imageUrl: 'assets/evoke-logo.png' },
-    // { cardTitle: '2024 UX Trends', description: 'Stay ahead with the latest UX trends', imageUrl: 'assets/ux-trends.png' },
-    // Add more box items here
-    { cardTitle: 'Evolve', description: 'The foundation for seamless experiences', imageUrl: 'assets/images/EvokeLogo1.png' },
-    { cardTitle: 'Evoke Logo', description: 'Downloadable Logos in various formats', imageUrl: 'assets/images/EvokeLogo1.png' },
-    { cardTitle: '2024 UX Trends', description: 'Stay ahead with the latest UX trends', imageUrl: 'assets/images/EvokeLogo1.png' }
+  isDropdownOpen = false;
+
+  navLinks = [
+    // { label: 'Dashboard', path: '/Dashboard' },
+    //{ label: 'AI', path: '/ai' },
+    { label: 'Data Science', path: '/data-science' },
+    { label: 'IT', path: '/it' },
+    { label: 'Java', path: '/java' },
+    { label: 'LowCode', path: '/low-code' },
+    { label: 'Microsoft', path: '/microsoft' },
+    { label: 'Open Source', path: '/ppen-source' },
+    { label: 'Oracle', path: '/oracle' },
+    { label: 'Pega', path: '/Pega' },
+    { label: 'Qa', path: '/qa' },
+    { label: 'Rpa', path: '/rpa' },
+    { label: 'Salesforce', path: '/Sales-force' },
+    { label: 'UI/UX', path: ['/UI', '/UX'] }
   ];
+
+  // Toggle the dropdown state
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  // Close the dropdown
+  closeDropdown() {
+    this.isDropdownOpen = false;
+  }
+
+  // Detect clicks outside the dropdown to close it
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const targetElement = event.target as HTMLElement;
+    const dropdownButton = document.getElementById('menu-button');
+
+    if (dropdownButton && !dropdownButton.contains(targetElement) && this.isDropdownOpen) {
+      this.closeDropdown();
+    }
+  }
 
 }
 

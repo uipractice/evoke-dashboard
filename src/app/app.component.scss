@@ -1,38 +1,9 @@
-// // .nav-link {
-// //   font-size: large;
-// //   cursor: pointer;
-// // }
+/* src/app/components/dashboard/dashboard.component.css */
+.dashboard-container {
+  padding: 16px;
+}
 
-// // .navbar-light .navbar-nav .nav-link.active {
-// //   color: #007ACC
-// // }
-
-// // .navbar-brand {
-// //   margin-left: 10px;
-// // }
-
-// // -----------------------------------------------------------------------
-// .header {
-//   // display: flex;
-//   width: 1440px;
-//   height: auto; //60px
-//   padding: 0px 10px 0px 145px;
-//   align-items: center;
-//   gap: 36px;
-//   background: var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C);
-// }
-
-// .header .navPart {
-//   // display: flex;
-// }
-
-// .header .navPartItem  {
-//   color: var(--Neutral-Colors-Pure-White, #FFF);
-//   /* Generic DSM Fonts/Body/Body-S */
-//   font-family: Inter;
-//   font-size: 14px;
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 22px;
-//   /* 157.143% */
-// }
+mat-card {
+  margin-bottom: 16px;
+  text-align: center;
+}

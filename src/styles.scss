@@ -3,11 +3,35 @@
 @tailwind components;
 @tailwind utilities;
 
-div.card-header {
-  font-size: large;
+// div.card-header {
+//   font-size: large;
+// }
+
+// div.card {
+//   margin-top: 20px;
+//   margin-left: 10px;
+// }
+
+
+body {
+  font-family: "Inter", sans-serif;
 }
 
-div.card {
-  margin-top: 20px;
-  margin-left: 10px;
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+max-width:1140px;
+width:100%;
+margin:0 auto;
+}
+.text-14 {
+  font-size:14px !important;
+}
+
+@media (max-width:400px) {
+  .p-l-22 {
+    padding-left:22px;
+
+  }
 }
