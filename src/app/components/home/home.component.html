@@ -1,0 +1,38 @@
+<section>
+  <div class="grid gap-6 mt-2 px-2 sm:px-4 md:px-0 lg:px-0">
+    @for (Card of Dashboards1; track Card) {
+      @if(Card.Template1?.groupId == 0) {
+        <div class="grid {{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">
+          <app-template1-card [card]="Card.Template1" [height]="200"></app-template1-card>
+        </div>
+      }
+      @if(Card.Template1?.groupId == 1) {
+        <div class="w-auto grid {{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '290px'}">
+          <app-template1-card [card]="Card.Template1" [height]="290"></app-template1-card>
+        </div>
+      }
+      @if(Card.Template2_child) {
+        <div class="{{ Card.cols }} grid {{ Card.childlength }}">
+          @for (child of  Card.Template2_child; track child) {
+            <app-template2-card [card]="child"></app-template2-card>
+          }
+        </div>
+      }
+      @if(Card.Template2?.groupId == 2) {
+        <div class="{{Card.Template2.cols}}">
+          <app-template2-card [card]="Card.Template2"></app-template2-card>
+        </div>
+      }
+      @if(Card.Template1?.groupId == 3) {
+        <div class="{{Card.Template1.cols}} relative bg-cover bg-center flex flex-col justify-end items-start shadow-lg rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '242px'}">
+          <app-template1-card [card]="Card.Template1" [height]="242"></app-template1-card>
+        </div>
+      }
+      @if(Card.Template2?.groupId == 4) {
+        <div class="{{Card.Template2.cols}}">
+          <app-template2-card class="{{Card.Template2.cols}}" [card]="Card.Template2"></app-template2-card>
+        </div>
+      }
+    }
+  </div>
+</section>

@@ -1,12 +1,9 @@
-.nav-link {
-  font-size: large;
-  cursor: pointer;
+/* src/app/components/dashboard/dashboard.component.css */
+.dashboard-container {
+  padding: 16px;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-  color: #007ACC
-}
-
-.navbar-brand {
-  margin-left: 10px;
+mat-card {
+  margin-bottom: 16px;
+  text-align: center;
 }
