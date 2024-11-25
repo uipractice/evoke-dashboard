@@ -27,6 +27,14 @@ module.exports = {
     },
   },
 
+  extend: {
+    spacing: {
+      '22': '22px', // Add custom 22px spacing
+    },
+  },
+
+
+
   plugins: [
     require('@tailwindcss/line-clamp'),
   ],

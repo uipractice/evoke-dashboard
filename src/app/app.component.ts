@@ -18,9 +18,18 @@ export class AppComponent {
 
   navLinks = [
     // { label: 'Dashboard', path: '/Dashboard' },
-    { label: 'AI', path: '/AI' },
-    { label: 'CLOUD', path: '/Cloud' },
-    { label: 'IT', path: '/IT' },
+    //{ label: 'AI', path: '/ai' },
+    { label: 'Data Science', path: '/data-science' },
+    { label: 'IT', path: '/it' },
+    { label: 'Java', path: '/java' },
+    { label: 'LowCode', path: '/low-code' },
+    { label: 'Microsoft', path: '/microsoft' },
+    { label: 'Open Source', path: '/ppen-source' },
+    { label: 'Oracle', path: '/oracle' },
+    { label: 'Pega', path: '/Pega' },
+    { label: 'Qa', path: '/qa' },
+    { label: 'Rpa', path: '/rpa' },
+    { label: 'Salesforce', path: '/Sales-force' },
     { label: 'UI/UX', path: ['/UI', '/UX'] }
   ];
 

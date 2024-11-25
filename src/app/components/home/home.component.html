@@ -1,5 +1,5 @@
 <section>
-  <div class="grid gap-4 m-2">
+  <div class="grid gap-6 mt-2 px-2 sm:px-4 md:px-0 lg:px-0">
     @for (Card of Dashboards1; track Card) {
       @if(Card.Template1?.groupId == 0) {
         <div class="grid {{Card.Template1.cols}} relative bg-cover bg-center rounded-lg" [ngStyle]="{'background-image': 'url(' + Card.Template1?.imageUrl + ')', 'height': '200px'}">

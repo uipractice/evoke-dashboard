@@ -9,8 +9,8 @@ import { SharedService } from './shared-service';
   template: `
     @if(card.groupId == 0) {
       <div class="absolute inset-0 rounded-lg bg-opacity-50 flex flex-col text-left text-white">
-        <h1 class="mt-10 ml-6 text-4xl font-bold mb-4">{{ card.cardTitle }}</h1>
-        <p class="ml-6 text-base font-normal max-w-lg">{{ card.description }}</p>
+        <h1 class="mt-12 ml-8 pt-2 text-4xl font-bold mb-4">{{ card.cardTitle }}</h1>
+        <p class="ml-8 pr-11 text-base font-normal max-w-lg">{{ card.description }}</p>
       </div>
     } @else if((card.groupId == 1) && (card.id !== 4)) {
     <button (click)="openPdfInNewTab(card.pdfLink)">

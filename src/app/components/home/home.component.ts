@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 1,
           groupId: 1,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           rows: "row-span-2",
           cardTitle: 'Evolve',
           description: 'The foundation for seamless experiences',
@@ -62,11 +62,11 @@ export class HomeComponent implements OnInit {
             cardTitle: 'Evoke Logo',
             description:
               'Evoke logos are available for download in multiple formats and dimensions.',
-            imageUrl: 'assets/images/EvokeLogo.png',
+            imageUrl: 'assets/images/EvokeLogo.svg',
             pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
           },
         ],
-        cols: "col-span-4",
+        cols: "col-span-12 grid lg:col-span-4 relative rounded-lg sm:col-span-2 w-auto",
         rows: "row-span-1", // Half height stacked
         childlength: "grid-rows-2"
       },
@@ -75,11 +75,11 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 4,
           groupId: 1,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           rows: "row-span-2",
           cardTitle: '2024',
           description: 'UX Trends',
-          imageUrl: 'assets/images/UXTrends.png',
+          imageUrl: 'assets/images/ux-trends.png',
           pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
         },
       },
@@ -114,7 +114,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 7,
           groupId: 3,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           cardTitle: 'Blog',
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
@@ -127,7 +127,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 8,
           groupId: 3,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           cardTitle: 'Case Study',
           description:
             'Provides  the understanding of complex issues and informing decision-making by examining specific examples in depth.',
@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit {
         Template1: {
           id: 9,
           groupId: 3,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           cardTitle: 'Whitepaper',
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 10,
           groupId: 4,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           cardTitle: 'UX Tools',
           description:
             "A web-based tool for designing, prototyping, and collaborating in real-time. It's widely used for interface design and has robust prototyping capabilities.",
@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 11,
           groupId: 4,
-          cols: "col-span-4",
+          cols: "col-span-12 sm:col-span-2 lg:col-span-4",
           cardTitle: 'UX Best Practices',
           description:
             'Focus on creating intuitive, seamless, and enjoyable experiences for users.',
@@ -179,7 +179,7 @@ export class HomeComponent implements OnInit {
         Template2: {
           id: 12,
           groupId: 4,
-          cols: "col-span-4",
+          cols: "col-span-12 col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4",
           cardTitle: 'Quicklinks',
           description:
             'Provide easy access to frequently used or important sections, streamlining navigation for users.',

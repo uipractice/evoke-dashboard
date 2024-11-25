@@ -1,3 +1,9 @@
-// .header .active {
-//   background-color: orange;
-// }
+/* src/app/components/dashboard/dashboard.component.css */
+.dashboard-container {
+  padding: 16px;
+}
+
+mat-card {
+  margin-bottom: 16px;
+  text-align: center;
+}
