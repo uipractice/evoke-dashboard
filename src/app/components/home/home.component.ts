@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
           cardTitle: 'Evolve',
           description: 'The foundation for seamless experiences',
           imageUrl: 'assets/images/Evolve.jpg',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {

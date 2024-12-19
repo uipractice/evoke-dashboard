@@ -1,5 +1,5 @@
-<div class="min-h-screen bg-gray-50">
-  <!-- Navbar and Header Sections Here (As Defined Earlier) -->
+<div class="min-h-screen">
+  <!-- Navbar and Header Sections Here (As Defined Earlier) bg-gray-50-->
   <div class="header">
     <div class="bg-headerBlue">
       <div class="container mx-auto">
@@ -12,11 +12,11 @@
 
               </div>
               <div
-                class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between"
+                class="flex flex-1  justify-center sm:justify-between items-center"
               >
                 <div class="flex flex-shrink-0 items-center">
                   <img
-                    class="h-8 w-auto"
+                    class="h-10 w-auto"
                     src="../assets/images/Evoke_technologies_logo-new.png"
                     alt="Your Company"
                   />
@@ -25,17 +25,15 @@
                   <div class="flex space-x-3">
                     @for(link of navLinks; track link) { @if(link.label ===
                     'UI/UX') {
-                    <div
-                      class="relative inline-block text-left"
-                      (clickOutside)="closeDropdown()"
-                    >
-                      <div>
-                        <a
+                    
+                      <!--<div>
+                        
+                         <a
                         [routerLink]="[link.path]"
                         routerLinkActive="bg-headerOrange"
                         aria-current="page"
                           (click)="toggleDropdown()"
-                          class="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-medium text-headerWhite"
+                          class="inline-flex w-full justify-center gap-x-3.5 rounded-md px-3 py-2 text-sm font-medium text-headerWhite"
                           id="menu-button"
                           aria-expanded="true"
                           aria-haspopup="true"
@@ -44,7 +42,7 @@
                           <svg
                             class="-mr-1 h-5 w-5 text-gray-400"
                             viewBox="0 0 20 20"
-                            fill="currentColor"
+                            fill="#ffffff"
                             aria-hidden="true"
                             data-slot="icon"
                           >
@@ -54,56 +52,25 @@
                               clip-rule="evenodd"
                             />
                           </svg>
-                        </a>
-                      </div>
-                      @if(isDropdownOpen) {
-                      <div
-                        class="absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="menu-button"
-                        tabindex="-1"
-                      >
-                        <!-- <div class="py-1" role="none"> -->
-                        <div class="" role="none">
+                        </a> 
+                      </div>-->
+                    
                           <a
                             [routerLink]="[link.path[0]]"
-                            routerLinkActive="bg-headerOrange"
+                            routerLinkActive="bg-headerOrange text-white-c"
                             aria-current="page"
-                            class="rounded-t-md block px-4 py-2 text-sm font-medium text-black hover:bg-headerOrange hover:text-black hover:rounded-t-md"
+                            class="rounded-md px-2 py-2 capitalize text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white"
                             role="menuitem"
                             tabindex="-1"
                             id="menu-item-0"
-                            >UI</a
-                          >
-                          <a
-                            [routerLink]="[link.path[1]]"
-                            routerLinkActive="bg-headerOrange"
-                            aria-current="page"
-                            class="rounded-b-md block px-4 py-2 text-sm font-medium text-black hover:bg-headerOrange hover:text-black hover:rounded-b-md"
-                            role="menuitem"
-                            tabindex="-1"
-                            id="menu-item-1"
-                            >UX</a
-                          >
-                        </div>
-                        <!-- <div class="" role="none">
-                              <a [routerLink]="[link.path]" routerLinkActive="bg-headerOrange" aria-current="page"
-                               class="block px-4 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange
-                               hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0">UI</a>
-                              <a [routerLink]="[link.path]" routerLinkActive="bg-headerOrange" aria-current="page"
-                               class="block px-4 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange
-                               hover:text-white" role="menuitem" tabindex="-1" id="menu-item-1">UX</a>
-                            </div> -->
-                      </div>
-                      }
-                    </div>
+                            >UI/UX</a>
+                          
                     } @else() {
                     <a
                       [routerLink]="[link.path]"
                       routerLinkActive="bg-headerOrange"
                       aria-current="page"
-                      class="rounded-md px-1 py-2 text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white uppercase "
+                      class="rounded-md px-2 py-2 capitalize text-sm font-medium text-headerWhite hover:bg-headerOrange hover:text-white  "
                     >
                       {{ link.label }}
                     </a>
@@ -169,9 +136,9 @@
 </div>
 <div class="footer bg-footerGray">
   <div class="container">
-  <div class="flex mx-auto flex-wrap pt-4 pb-2 mt-6  items-center justify-between sm:pl-22">
-    <span class="text-white text-sm sm:pb-1 p-l-22">Evoke Technologies Pvt. Ltd. All Rights Reserved.</span>
-    <span class="text-white text-sm sm:text-center p-l-22"><a class="text-white" href="https://www.evoketechnologies.com/">www.evoketechnologies.com</a></span>
+  <div class="flex mx-auto flex-wrap mt-6 py-2.5 items-center justify-between sm:pl-22">
+    <span class="bg-none text-white text-sm p-l-22">Evoke Technologies Pvt. Ltd. All Rights Reserved.</span>
+    <span class="bg-none text-white text-sm sm:text-center p-l-22 "><a class="text-white bg-none" href="https://www.evoketechnologies.com/">www.evoketechnologies.com</a></span>
   </div>
 </div>
 </div>
