@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
           description:
             'Empowering users with intuitive designs that enhance operational efficiency.',
           imageUrl: 'assets/images/UI-UX.png'
+
+          //           imageUrl: 'assets/images/UI-UX.png'
+
         },
       },
       {
@@ -52,21 +55,23 @@ export class HomeComponent implements OnInit {
             id: 2,
             groupId: 1,
             cardTitle: 'Evoke Brand Book',
-            description: 'The Blueprint to consistent Brilliance.',
+            description: 'Discover Evokes identity, values, and design principles in  our Brand Book.',
             imageUrl: 'assets/images/EvokeBrBook.png',
-            pdfLink: '/assets/Pdf2.pdf'  // Unique link for Card
+           // pdfLink: '/assets/Pdf2.pdf'  // Unique link for Card
+           pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
+
           },
           {
             id: 3,
             groupId: 1,
             cardTitle: 'Evoke Logo',
             description:
-              'Evoke logos are available for download in multiple formats and dimensions.',
+              'The Evoke logo is ready to adapt to your needs, crafted perfectly in the format you require',
             imageUrl: 'assets/images/EvokeLogo.svg',
-            pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+            pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
           },
         ],
-        cols: "col-span-12 grid lg:col-span-4 relative rounded-lg sm:col-span-2 w-auto",
+        cols: "col-span-12 grid lg:col-span-4 relative sm:col-span-2 w-auto",
         rows: "row-span-1", // Half height stacked
         childlength: "grid-rows-2"
       },
@@ -80,7 +85,7 @@ export class HomeComponent implements OnInit {
           cardTitle: '2024',
           description: 'UX Trends',
           imageUrl: 'assets/images/ux-trends.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -93,7 +98,7 @@ export class HomeComponent implements OnInit {
           description:
             "UX documentation is a repository of all information relevant to the user experience design process. Team members can always refer to this repository to see what has worked and what hasn't. This way, teams can build on past experiences and avoid making the same mistakes",
           imageUrl: 'assets/images/UXStandardDoc.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -106,7 +111,7 @@ export class HomeComponent implements OnInit {
           description:
             'A critical step in ensuring the accuracy, clarity, and quality of a project or deliverable. It involves thoroughly examining the content to identify any errors, inconsistencies, or areas that need improvement, such as factual inaccuracies, unclear language, or missing information.',
           imageUrl: 'assets/images/ReviewDoc.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -119,7 +124,7 @@ export class HomeComponent implements OnInit {
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
           imageUrl: 'assets/images/Blog.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -132,7 +137,7 @@ export class HomeComponent implements OnInit {
           description:
             'Provides  the understanding of complex issues and informing decision-making by examining specific examples in depth.',
           imageUrl: 'assets/images/CaseStudy.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -145,7 +150,7 @@ export class HomeComponent implements OnInit {
           description:
             'A detailed analysis of a real-life scenario or project, exploring challenges, strategies, and outcomes to provide insights and practical lessons.',
           imageUrl: 'assets/images/Whitepaper.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -158,7 +163,7 @@ export class HomeComponent implements OnInit {
           description:
             "A web-based tool for designing, prototyping, and collaborating in real-time. It's widely used for interface design and has robust prototyping capabilities.",
           imageUrl: 'assets/images/UXTools.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -171,7 +176,7 @@ export class HomeComponent implements OnInit {
           description:
             'Focus on creating intuitive, seamless, and enjoyable experiences for users.',
           imageUrl: 'assets/images/UXBestPractice.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
       {
@@ -184,10 +189,13 @@ export class HomeComponent implements OnInit {
           description:
             'Provide easy access to frequently used or important sections, streamlining navigation for users.',
           imageUrl: 'assets/images/QuickLinks.png',
-          pdfLink: '/assets/Pdf1.pdf'  // Unique link for Card
+
+          pdfLink: 'https://evokemail.sharepoint.com/:b:/s/UIPractice/EXyWhuE5MutClNd57LrHTFYB__M1FQMdMhKvgkDPZvbyWg?e=DdaQ6j'  // Unique link for Card
         },
       },
     ];
   }
+
+  
 
 }

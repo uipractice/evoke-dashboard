@@ -8,8 +8,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   template: `
     <div class="text-center">
+
+ 
+    
       <br>
       <span style="font-weight: bold; text-decoration: underline;">PDF Viewer</span>
+  
+   
 
       <!-- PDF Viewer Section -->
       <div class="pdf-viewer-container text-center">
@@ -22,7 +27,7 @@ import { CommonModule } from '@angular/common';
                     (after-load-complete)="afterLoadComplete($event)">
         </pdf-viewer>
       </div>
-
+     
       <!-- Toolbar -->
       <div class="toolbar">
         <button (click)="prevPage()" [disabled]="currentPage <= 1">Previous</button>
@@ -46,12 +51,14 @@ import { CommonModule } from '@angular/common';
 
 export class EvokeStyleGuidePdfComponent implements OnInit {
   pdfSrc: string | undefined;
+  isPdf: boolean = false;
 
   // Inject the PdfService
   public sharedService = inject(SharedService);
   private route = inject(ActivatedRoute);
+card: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -68,30 +75,38 @@ export class EvokeStyleGuidePdfComponent implements OnInit {
         });
       }
     });
+    // Check if the current route has the 'isPdf' flag set
+
+    this.isPdf = this.route.snapshot.data['isPdf'];
+
+    
   }
 
   private processSharePointUrl(url: string): string {
     try {
-      // Handle multiple possible encodings by decoding once more, just in case
-      let processedUrl = decodeURIComponent(url);  // Decode URL again if needed
-
-      // Ensure URL is properly formatted for PDF viewer
+      // Decode URL multiple times to handle nested encodings
+      let processedUrl = decodeURIComponent(decodeURIComponent(url));
+  
+      // Replace encoded characters
       processedUrl = processedUrl
-        .replace(/%2F%2F/g, '//')  // Replace encoded forward slashes
-        .replace(/%3A/g, ':')  // Replace encoded colons
-        .replace(/%3F/g, '?')  // Replace encoded question marks
-        .replace(/%3D/g, '=')  // Replace encoded equal signs
+       // .replace(/%20/g, ' ') // Replace encoded spaces
+        .replace(/%2F/g, '/') // Replace encoded slashes
+        .replace(/%3A/g, ':') // Replace encoded colons
+        .replace(/%3F/g, '?') // Replace encoded question marks
+        .replace(/%3D/g, '=') // Replace encoded equals
         .replace(/%26/g, '&'); // Replace encoded ampersands
-       
-      // Log the final processed URL for debugging
+  
       console.log('Processed SharePoint URL:', processedUrl);
-
       return processedUrl;
     } catch (error) {
-      console.error('Error processing URL:', url, error);
-      return url;  // Fallback to the original URL if processing fails
+      console.error('Error processing SharePoint URL:', url, error);
+      return url; // Fallback to original URL if processing fails
     }
+
+    
   }
+
+  
 
   currentPage = 1; // Current page number
   totalPages = 0; // Total number of pages in the PDF
@@ -143,5 +158,33 @@ export class EvokeStyleGuidePdfComponent implements OnInit {
         console.error('Failed to download the PDF:', err);
       }
     });
+
   }
+    
+
+//     this.http.get(url, { responseType: 'blob', withCredentials: true }).subscribe({
+//   next: (data: Blob) => {
+//     this.pdfSrc = URL.createObjectURL(data);
+//   },
+//   error: (err) => {
+//     console.error('Failed to fetch PDF:', err);
+//   },
+// });
+
+
+
+  fetchPdf(url: string) {
+    this.http.get(url, { responseType: 'blob', withCredentials: true }).subscribe({
+      next: (data: Blob) => {
+        this.pdfSrc = URL.createObjectURL(data);
+      },
+      error: (err) => {
+        console.error('Failed to fetch PDF:', err);
+      },
+    });
+  }
+  
+
+  
+
 }

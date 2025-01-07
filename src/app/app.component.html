@@ -1,7 +1,9 @@
 <div class="min-h-screen">
   <!-- Navbar and Header Sections Here (As Defined Earlier) bg-gray-50-->
-  <div class="header">
-    <div class="bg-headerBlue">
+  
+
+  <div *ngIf="!isPdf" class="header">
+    <div class="headerBlue1">
       <div class="container mx-auto">
         <nav>
           <div class="mx-auto max-w-7xl">
@@ -124,7 +126,6 @@
       </div>
     </div>
   </div>
-
   <!-- Main Content part-->
   <!-- <div class="container mx-auto px-36 flex justify-center"> -->
   <div class="container mx-auto flex justify-center">
@@ -134,8 +135,8 @@
   <!-- Footer Section Here -->
 
 </div>
-<div class="footer bg-footerGray">
-  <div class="container">
+<div *ngIf="!isPdf" class="footer bg-footerGray">
+  <div  class="container">
   <div class="flex mx-auto flex-wrap mt-6 py-2.5 items-center justify-between sm:pl-22">
     <span class="bg-none text-white text-sm p-l-22">Evoke Technologies Pvt. Ltd. All Rights Reserved.</span>
     <span class="bg-none text-white text-sm sm:text-center p-l-22 "><a class="text-white bg-none" href="https://www.evoketechnologies.com/">www.evoketechnologies.com</a></span>

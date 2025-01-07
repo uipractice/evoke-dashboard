@@ -16,7 +16,9 @@
 body {
   font-family: "Inter", sans-serif;
 }
-
+p{
+  font-family:"Poppins", sans-serif;
+}
 h1 {
   font-family: "Poppins", sans-serif;
 }
@@ -28,8 +30,12 @@ margin:0 auto;
 .text-14 {
   font-size:14px !important;
 }
+.headerBlue1 {
+  background:linear-gradient(90deg, #00245A 44.5%, #004DC0 71.03%, #00245A 100%);
+}
+
 .text-white{
-background: linear-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.54) 66%);
+background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.54) 75%);
 // justify-content: end;
 // padding: 0px 16px;
 // margin-top: auto;
@@ -52,11 +58,16 @@ background: linear-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.54) 66%);
 }
 
 .toolbar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  gap: 10px;
+  display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+    position: absolute;
+    top:38px;
+    background: rgb(0, 0, 0, 0.4);
+    padding: 10px 0px;
+    z-index: 99;
   
 button {
   padding: 5px 10px;
@@ -88,4 +99,10 @@ span {
 
 .text-white-c {
   color:#fff;
+}
+
+.ng2-pdf-viewer-container {
+
+  overflow-y:auto;
+  overflow-x:inherit!important;
 }
